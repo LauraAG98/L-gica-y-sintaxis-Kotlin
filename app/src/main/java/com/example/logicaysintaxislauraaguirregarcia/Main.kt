@@ -106,5 +106,19 @@ fun main(){
     println("El resultado de la multiplicacion de la funcion lambda es: " + operarMultiplicacion(20,4){i,j ->i*j});
 
     //Modelo de datos y funcion descriptiva
+    data class Usuario(val nombre : String, val edad : Int);
+    fun descripcion(usuario : Usuario) : String{
+        return "${usuario.nombre}, tiene ${usuario.edad} años";
+    }
+    val persona = Usuario("Laura",27);
+    println(descripcion(persona));
 
+    //Listado textual de objetos
+    val usuarios = listOf(
+       Usuario("Pepe",10),
+        Usuario("Brayan",19),
+        Usuario("Andres",20)
+    )
+
+    usuarios.forEach { usuario -> println("${usuario.nombre} tiene ${usuario.edad} años")};
 }
