@@ -80,4 +80,31 @@ fun main(){
         }
     }
     mostrarNombres(nombres);
+
+    //Funciones de orden superior
+    val enteros = listOf<Int>(1,2,3,4,5,6);
+    fun mostrarNumeros(list : List<Int>){
+        val numeros = enteros.filter { it  % 2 == 0 }.map { it * it }.sum( );
+        println("El resultado de la funcion de orden superior es: " + numeros);
+    }
+    mostrarNumeros(list = enteros);
+
+    //Funcion lambda personalizada
+    fun operarSuma(e : Int, f : Int, operacion : (Int,Int) -> Int): Int{
+        return operacion(e, f);
+    }
+    println("El resultado de la suma de la funcion lambda es: " + operarSuma(8,88){e,f -> e+f});
+
+    fun operarResta(g : Int, h : Int, operacion : (Int, Int) -> Int): Int{
+        return operacion(g,h);
+    }
+    println("El resultado de la resta de la funcion lambda es: " + operarResta(10,2){g,h ->g-h});
+
+    fun operarMultiplicacion(i: Int, j : Int, operacion : (Int,Int) -> Int): Int{
+        return operacion(i,j);
+    }
+    println("El resultado de la multiplicacion de la funcion lambda es: " + operarMultiplicacion(20,4){i,j ->i*j});
+
+    //Modelo de datos y funcion descriptiva
+
 }
